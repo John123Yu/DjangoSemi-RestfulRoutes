@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Semi-Restful Users Django Display Page</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Actions</th>
+		</tr>
+		{% for product in displayAll %}
+		<tr>
+			<td>{{product.name}}</td>
+			<td>{{product.description}}</td>
+			<td>{{product.price}}</td>
+			<td>
+				<a href="{%url 'show' id=product.id %}">Show</a>
+				<a href="{%url 'editDisplay' id=product.id %}">Edit</a>
+				<a href="{%url 'delete' id=product.id %}">Delete</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<a href="{%url 'createDisplay' %}">Add A New Product</a>
+</body>
+</html>

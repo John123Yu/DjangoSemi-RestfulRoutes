@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>Semi-Restful Users Display One User</title>
+</head>
+<body>
+	{% for product in showproducts %}
+	<h1> {{product.name}} </h1>
+	<ul>
+		<li>Name: {{product.name}} </li>
+		<li>Description: {{product.description}}</li>
+		<li>Price: {{product.price}}</li>
+	</ul>
+	<a href="{%url 'editDisplay' id=product.id %}">Edit</a>
+	<a href="{%url 'delete' id=product.id %}">Delete</a>
+	{% endfor %}
+	<a href="{%url 'index' %}">Go Back to Display</a>
+</body>
+</html>

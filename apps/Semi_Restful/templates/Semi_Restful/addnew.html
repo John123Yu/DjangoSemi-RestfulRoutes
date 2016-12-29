@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>SemiRestful Users New User Page</title>
+</head>
+<body>
+	<h1> Add A New Product </h1>
+	<form action="{%url 'create' %}" method='post'>
+    {% csrf_token %}
+          Name: <input type='text' name='name'> 
+          Description: <input type='text' name='description'>
+          Price: <input type='text' name='price'>
+          <input type='submit' value='create product'>
+    </form>
+    <a href="{%url 'index' %}">Go Back to Display</a>
+</body>
+</html>
